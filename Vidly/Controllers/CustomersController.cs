@@ -16,7 +16,7 @@ namespace Vidly.Controllers
             return View();
         }
 
-        [Route("Customers")]
+        [Route("customers/customers")]
         public ActionResult Customers()
         {
             var customers = new List<Customer>
@@ -28,6 +28,18 @@ namespace Vidly.Controllers
             var viewModel = new CustomersViewModel
             {
                 Customers = customers
+            };
+            return View(viewModel);
+        }
+
+        [Route("customers/customerdetails/{id}")]
+        public ActionResult CustomerDetails(int id)
+        {
+            var customer = new Customer { Id = id, Name = "Customer " + id };
+      
+            var viewModel = new CustomerDetailsViewModel
+            {
+                SelectedCustomer = customer
             };
             return View(viewModel);
         }

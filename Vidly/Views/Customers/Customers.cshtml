@@ -1,7 +1,7 @@
 ﻿@model Vidly.ViewModels.CustomersViewModel
 
 @{
-    ViewBag.Title = "ShowCustomers";
+    ViewBag.Title = "Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -22,8 +22,8 @@ else
         @foreach (var customer in Model.Customers)
         {
             <tr>
-                <td>@customer.Id</td>
-                <td>@customer.Name</td>
+                <td>@Html.ActionLink("" + @customer.Id, "customerdetails/" + @customer.Id, "customers", new { area = "" }, new { @class = "href" })</td>
+                <td>@Html.ActionLink("" + @customer.Name, "customerdetails/" + @customer.Id, "customers", new { area = "" }, new { @class = "href" })</td>
             </tr>
         }
      </tbody>

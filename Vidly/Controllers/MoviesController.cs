@@ -10,7 +10,7 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
-        [Route("Movies")]
+        [Route("movies/movies")]
         public ActionResult Movies()
         {
         

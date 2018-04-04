@@ -1,0 +1,25 @@
+﻿@model Vidly.ViewModels.CustomerDetailsViewModel
+
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (Model.SelectedCustomer.Id == 0)
+{
+    <text>No customer selected.</text>
+}
+else
+{
+
+    <table>
+        <tr><th>Selected Customer</th></tr>
+        <tr>
+            <td>@Model.SelectedCustomer.Id</td>
+            <td>@Model.SelectedCustomer.Name</td>
+        </tr>
+    </table>
+    
+}
+
+
